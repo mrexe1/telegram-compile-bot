@@ -13,11 +13,11 @@ bot = telebot.TeleBot(token.strip())
 
 @bot.message_handler(commands=['start', 'help'])
 def welcome(message):
-    welcome_string = """This bot can compile code given to it, using pastebin
-    urls. Just use /compile <pastebin_id> <language>
-    to start! Use /languages to print a list
-    of all supported languages in a table!
-    Happy compiling ^^"""
+    welcome_string = """Tʜɪs Rᴏʙᴏᴛ ᴄᴀɴ ᴄᴏᴍᴘɪʟᴇ ᴄᴏᴅᴇ ɢɪᴠᴇɴ ᴛᴏ ɪᴛ﹐ ᴜsɪɴɢ ᴘᴀsᴛᴇʙɪɴ
+    ᴜʀʟs. Jᴜsᴛ ᴜsᴇ /ᴄᴏᴍᴘɪʟᴇ <ᴘᴀsᴛᴇʙɪɴ_ɪᴅ> <ʟᴀɴɢᴜᴀɢᴇ>
+    ᴛᴏ sᴛᴀʀᴛ﹗ Usᴇ /ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴘʀɪɴᴛ ᴀ ʟɪsᴛ
+    ᴏғ ᴀʟʟ sᴜᴘᴘᴏʀᴛᴇᴅ ʟᴀɴɢᴜᴀɢᴇs ɪɴ ᴀ ᴛᴀʙʟᴇ﹗
+Cʀᴇᴀᴛᴏʀ = @Voldemort ^^"""
 
     bot.reply_to(message, welcome_string)
 
@@ -42,7 +42,7 @@ def compile_link(message):
             compargs = row["compileargs"]
 
     if id is -1:
-        bot.reply_to(message,  "Language is not supported")
+        bot.reply_to(message,  "<Language is not supported>")
         return
 
     code = requests.get('http://pastebin.com/raw.php?i=' + arguments[0])
